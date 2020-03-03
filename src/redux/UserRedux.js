@@ -27,6 +27,7 @@ export const INITIAL_STATE = {
   email: null,
   username: null,
   token: null,
+  authenticated: null,
   user: null,
 };
 
@@ -39,7 +40,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   },
   [Types.LOGIN_SUCCESS]: (state, action) => {
     const { token, user } = action.payload;
-    return { ...state, loading: false, error: null, token, user };
+    return { ...state, loading: false, error: null, authenticated: true, token, user };
   },
   [Types.LOGIN_FAILURE]: state => {
     return {
@@ -59,7 +60,7 @@ export const reducer = createReducer(INITIAL_STATE, {
   },
   [Types.REGISTER_SUCCESS]: (state, action) => {
     const { token, user } = action.payload;
-    return { ...state, loading: false, error: null, token, user };
+    return { ...state, loading: false, error: null, authenticated: true, token, user };
   },
   [Types.REGISTER_FAILURE]: state => {
     return {

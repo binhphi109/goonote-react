@@ -1,10 +1,17 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-import { map2resources } from '../libs/utils/i18nUtils';
 
 import en from './languages/en.json';
 import de from './languages/de.json';
+
+function map2resources(languages, namespace = 'translation') {
+  const resources = {};
+  Object.keys(languages).forEach(key => {
+    resources[key] = { [namespace]: languages[key] }
+  });
+  return resources;
+};
 
 i18n
   // detect user language
