@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import createStore from './redux';
-import App from './containers/App';
+import App from './containers/App/App';
 
 import './i18n';
 

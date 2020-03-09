@@ -3,12 +3,12 @@ import { compose, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router';
 import { withTranslation } from 'react-i18next';
-import RegisterPage from './register/RegisterPage';
-import LoginPage from './login/LoginPage';
-import WelcomePage from './welcome/WelcomePage';
-import HomePage from './home/HomePage';
-import NoteListPage from './noteList/NoteListPage';
-import NoteEditorPage from './noteEditor/NoteEditorPage';
+import RegisterPage from '../register/RegisterPage';
+import LoginPage from '../login/LoginPage';
+import WelcomePage from '../welcome/WelcomePage';
+import HomePage from '../home/HomePage';
+
+import './App.scss';
 
 const mapStateToProps = (state) => ({
   authenticated: state.auth.authenticated,
@@ -24,7 +24,6 @@ class App extends React.Component {
 
   render() {
     const { authenticated } = this.props;
-    console.log('App -> render -> authenticated', authenticated)
 
     return (
       <Switch>
@@ -33,8 +32,6 @@ class App extends React.Component {
         {authenticated && (
           <>
             <Route path="/home" component={HomePage} />
-            <Route path="/notes" component={NoteListPage} />
-            <Route path="/note/:noteId" component={NoteEditorPage} />
           </>
         )}
         <Route path="/" component={WelcomePage} />
