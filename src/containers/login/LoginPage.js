@@ -82,7 +82,7 @@ class LoginPage extends React.PureComponent {
     });
   };
 
-  validate = (item, callback, noNew) => {
+  validate = (item, callback) => {
     const { t } = this.props;
     const newErrors = [];
 
@@ -147,7 +147,7 @@ class LoginPage extends React.PureComponent {
             <Error className="loginError" errors={filter(errors, 'field', 'login')} />
 
             <div className="contentAction">
-              <Button className="contentButton" onClick={this.handleSave} action>
+              <Button className="loginButton" onClick={this.handleSave} action>
                 {t('login.action.save')}
               </Button>
             </div>

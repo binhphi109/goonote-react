@@ -14,7 +14,8 @@
 
     .contentTitle {
       margin-bottom: 16px;
-      font-size: 16px;
+      font-size: 20px;
+      text-align: center;
     }
 
     .contentDescription {
@@ -31,17 +32,14 @@
       margin-bottom: 16px;
     }
 
-    .contentButton {
+    .loginButton {
       font-size: 14px;
       font-weight: normal;
-
-      &.yes {
-        margin-bottom: 8px;
-      }
+      margin-bottom: 8px;
     }
 
     .loginError {
-      margin-top: 16px;
+      margin: 16px 0;
       font-size: 14px;
     }
 
